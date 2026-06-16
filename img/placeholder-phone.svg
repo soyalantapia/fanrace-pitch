@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 804 1736" width="804" height="1736" role="img" aria-label="Mockup pendiente">
+  <rect width="804" height="1736" fill="#120c20"/>
+  <rect x="34" y="34" width="736" height="1668" rx="40" fill="none" stroke="#5B21B6" stroke-width="3" stroke-dasharray="16 14" opacity="0.6"/>
+  <g fill="#8B5CF6" font-family="-apple-system, Helvetica, Arial, sans-serif" text-anchor="middle">
+    <text x="402" y="820" font-size="52" font-weight="800" letter-spacing="2" font-style="italic">MARSHAL PWA</text>
+    <text x="402" y="890" font-size="28" fill="#a7a1b8" font-weight="500">mockup pendiente</text>
+  </g>
+  <circle cx="402" cy="1000" r="7" fill="#8B5CF6"/>
+</svg>

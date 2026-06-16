@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>XNOD × FanRace · MVP Proposal</title>
+<meta name="description" content="We build the full FanRace MVP turnkey, live in 11 weeks. Two pillars, one base, one identity layer." />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="XNOD × FanRace" />
+<meta property="og:title" content="XNOD × FanRace · MVP Proposal" />
+<meta property="og:description" content="The full FanRace MVP, turnkey, live in 11 weeks. You go to market, we build and run the product." />
+<meta property="og:image" content="https://soyalantapia.github.io/fanrace-pitch/og.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:url" content="https://soyalantapia.github.io/fanrace-pitch/" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="XNOD × FanRace · MVP Proposal" />
+<meta name="twitter:image" content="https://soyalantapia.github.io/fanrace-pitch/og.jpg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:ital,wght@0,600;0,700;1,800;1,900&family=Saira:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+/* =========================================== THEME · FanRace (black + red) =========================================== */
+:root{
+  --black:#0a0a0a; --carbon:#161616; --carbon2:#1e1e1e; --line:#262626;
+  --red:#E63946; --red-deep:#b91c2c; --red-soft:#fca5a5;
+  --white:#ffffff; --silver:#9a9a9a; --steel:#5c5c5c;
+  --ok:#22c55e; --danger:#ef4444; --warn:#f59e0b;
+  --font-display:"Saira Condensed",sans-serif; --font-body:"Saira",sans-serif; --font-mono:"JetBrains Mono",monospace;
+  --ease:cubic-bezier(0.16,1,0.3,1); --dur:0.7s;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;overflow-x:hidden}
+html{scroll-snap-type:y mandatory;scroll-behavior:smooth}
+.slide{width:100vw;height:100vh;height:100dvh;overflow:hidden;scroll-snap-align:start;display:flex;flex-direction:column;position:relative}
+.slide-content{flex:1;display:flex;flex-direction:column;justify-content:center;max-height:100%;overflow:hidden;padding:var(--slide-padding)}
+:root{--title-size:clamp(1.5rem,5vw,4rem);--h2-size:clamp(1.25rem,3.5vw,2.5rem);--h3-size:clamp(1rem,2.5vw,1.75rem);--body-size:clamp(0.75rem,1.5vw,1.125rem);--small-size:clamp(0.65rem,1vw,0.875rem);--slide-padding:clamp(1rem,4vw,4rem);--content-gap:clamp(0.5rem,2vw,2rem);--element-gap:clamp(0.25rem,1vw,1rem)}
+.card,.container,.content-box{max-width:min(90vw,1000px);max-height:min(80vh,700px)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:clamp(0.5rem,1.5vw,1rem)}
+img,.image-container{max-width:100%;max-height:min(50vh,400px);object-fit:contain}
+@media (max-height:700px){:root{--slide-padding:clamp(0.75rem,3vw,2rem);--content-gap:clamp(0.4rem,1.5vw,1rem);--title-size:clamp(1.25rem,4.5vw,2.5rem);--h2-size:clamp(1rem,3vw,1.75rem)}}
+@media (max-height:600px){:root{--slide-padding:clamp(0.5rem,2.5vw,1.5rem);--content-gap:clamp(0.3rem,1vw,0.75rem);--title-size:clamp(1.1rem,4vw,2rem);--body-size:clamp(0.7rem,1.2vw,0.95rem)}.nav-dots,.keyboard-hint,.decorative{display:none}}
+@media (max-height:500px){:root{--slide-padding:clamp(0.4rem,2vw,1rem);--title-size:clamp(1rem,3.5vw,1.5rem);--h2-size:clamp(0.9rem,2.5vw,1.25rem);--body-size:clamp(0.65rem,1vw,0.85rem)}}
+@media (max-width:600px){:root{--title-size:clamp(1.25rem,7vw,2.5rem)}.grid{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.2s!important}html{scroll-behavior:auto}}
+body{background:var(--black);color:var(--white);font-family:var(--font-body);-webkit-font-smoothing:antialiased}
+.slide{background:radial-gradient(120% 80% at 82% -10%,rgba(230,57,70,.12),transparent 55%),linear-gradient(180deg,#0c0c0c,#070707)}
+.slide::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;background-image:repeating-linear-gradient(115deg,transparent 0 38px,rgba(255,255,255,.012) 38px 39px)}
+.display{font-family:var(--font-display);font-style:italic;font-weight:800;text-transform:uppercase;letter-spacing:-.01em;line-height:.96}
+.mono{font-family:var(--font-mono);font-variant-numeric:tabular-nums}
+.eyebrow{font-family:var(--font-display);font-style:italic;font-weight:700;text-transform:uppercase;letter-spacing:.18em;font-size:var(--small-size);color:var(--red)}
+.lead{color:var(--silver);font-size:var(--body-size);line-height:1.5;max-width:62ch}
+.amp{color:var(--red)}
+.kicker-line{width:clamp(40px,6vw,72px);height:4px;background:var(--red);border-radius:2px}
+.tag{display:inline-flex;align-items:center;gap:.5em;font-size:var(--small-size);color:var(--steel)}
+.wrap{width:100%;max-width:min(94vw,1240px);margin:0 auto}
+::selection{background:var(--red);color:#fff}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity var(--dur) var(--ease),transform var(--dur) var(--ease)}
+.slide.visible .reveal{opacity:1;transform:none}
+.slide.visible .reveal:nth-child(1){transition-delay:.05s}.slide.visible .reveal:nth-child(2){transition-delay:.13s}
+.slide.visible .reveal:nth-child(3){transition-delay:.21s}.slide.visible .reveal:nth-child(4){transition-delay:.29s}
+.slide.visible .reveal:nth-child(5){transition-delay:.37s}.slide.visible .reveal:nth-child(6){transition-delay:.45s}
+.progress-bar{position:fixed;top:0;left:0;height:3px;background:var(--red);width:0;z-index:9999;box-shadow:0 0 12px rgba(230,57,70,.6)}
+.nav-dots{position:fixed;right:clamp(8px,1.6vw,20px);top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:9px;z-index:9000}
+.nav-dots button{width:9px;height:9px;border-radius:50%;border:1px solid var(--steel);background:transparent;cursor:pointer;padding:0;transition:all .3s}
+.nav-dots button.active{background:var(--red);border-color:var(--red);transform:scale(1.25);box-shadow:0 0 10px rgba(230,57,70,.6)}
+.slide-no{position:fixed;left:clamp(10px,1.6vw,22px);bottom:clamp(10px,1.6vw,20px);font-family:var(--font-mono);font-size:.72rem;color:var(--steel);z-index:9000;letter-spacing:.1em}
+.hint{position:fixed;right:clamp(10px,1.6vw,22px);bottom:clamp(10px,1.6vw,20px);font-size:.66rem;color:var(--steel);z-index:9000;letter-spacing:.12em;text-transform:uppercase}
+.phone{position:relative;border:2px solid #2c2c2c;border-radius:30px;padding:9px 8px;background:#000;box-shadow:0 30px 70px -25px rgba(0,0,0,.9),0 0 0 1px rgba(255,255,255,.03);max-height:78vh}
+.phone::before{content:"";position:absolute;top:14px;left:50%;transform:translateX(-50%);width:34%;height:5px;border-radius:3px;background:#222;z-index:2}
+.phone img{display:block;border-radius:22px;max-height:74vh;width:auto}
+.browser{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--carbon);box-shadow:0 28px 64px -24px rgba(0,0,0,.85);max-width:100%}
+.browser-bar{display:flex;align-items:center;gap:6px;padding:8px 12px;background:#101010;border-bottom:1px solid var(--line)}
+.browser-bar i{width:10px;height:10px;border-radius:50%;display:inline-block}
+.browser-bar .u{margin-left:14px;font-family:var(--font-mono);font-size:.66rem;color:var(--steel);overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.browser img{display:block;width:100%;max-height:68vh;object-fit:cover;object-position:top}
+.chip{display:inline-flex;align-items:center;gap:.4em;border:1px solid var(--line);background:var(--carbon);border-radius:999px;padding:.3em .8em;font-size:var(--small-size);color:var(--silver)}
+.chip.red{border-color:rgba(230,57,70,.35);background:rgba(230,57,70,.1);color:var(--red-soft)}
+.chip.ok{border-color:rgba(34,197,94,.35);background:rgba(34,197,94,.1);color:var(--ok)}
+.split{display:grid;grid-template-columns:1fr;gap:var(--content-gap);align-items:center;width:100%}
+@media (min-width:860px){.split{grid-template-columns:1.05fr 1fr}.split.media-left{grid-template-columns:1fr 1.05fr}.split.wide-media{grid-template-columns:.82fr 1.18fr}.split.narrow-media{grid-template-columns:1.25fr .75fr}.split.narrow-media.media-left{grid-template-columns:.75fr 1.25fr}}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(.5rem,1.2vw,1rem)}
+@media (min-width:860px){.cards.c3{grid-template-columns:repeat(3,1fr)}.cards.c4{grid-template-columns:repeat(4,1fr)}}
+.fcard{border:1px solid var(--line);background:linear-gradient(180deg,var(--carbon),#101010);border-radius:14px;padding:clamp(.7rem,1.4vw,1.1rem)}
+.fcard.hot{border-color:rgba(230,57,70,.5);background:linear-gradient(180deg,rgba(230,57,70,.1),#101010)}
+.fcard h4{font-family:var(--font-display);font-style:italic;font-weight:800;text-transform:uppercase;font-size:clamp(.95rem,1.5vw,1.2rem);letter-spacing:-.01em}
+.fcard p{color:var(--silver);font-size:var(--small-size);line-height:1.42;margin-top:.25em}
+.fcard .lbl{font-size:.62rem;text-transform:uppercase;letter-spacing:.14em;color:var(--steel)}
+.stat{font-family:var(--font-display);font-style:italic;font-weight:900;color:var(--red);line-height:.9}
+ul.checks{list-style:none;display:grid;gap:.5em}
+ul.checks li{display:flex;gap:.6em;align-items:baseline;font-size:var(--body-size);color:#ededed}
+ul.checks li::before{content:"";flex:0 0 auto;width:.62em;height:.62em;margin-top:.45em;background:var(--red);transform:rotate(45deg)}
+ul.checks.x li::before{background:var(--steel)}
+.bigprice{font-family:var(--font-display);font-style:italic;font-weight:900;color:var(--white);line-height:.85;letter-spacing:-.02em}
+a{color:var(--red)}
+.stagebar{display:grid;grid-template-columns:4fr 4fr 3fr;gap:7px;margin-top:.3em}
+.stageseg{background:linear-gradient(90deg,var(--red-deep),var(--red));border-radius:9px;padding:.7em 1em;display:flex;justify-content:space-between;align-items:center;font-family:var(--font-display);font-style:italic;font-weight:800;text-transform:uppercase;color:#fff;font-size:var(--body-size)}
+.stageseg .w{font-family:var(--font-body);font-style:normal;font-weight:600;font-size:var(--small-size);opacity:.92}
+.band{display:flex;align-items:center;justify-content:space-between;gap:1em;background:var(--carbon2);border-left:4px solid var(--red);border-radius:11px;padding:.9em 1.3em}
+.pillarband{text-align:center;background:rgba(230,57,70,.1);border:1px solid rgba(230,57,70,.3);border-radius:10px;padding:.65em 1em;font-family:var(--font-display);font-style:italic;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--red-soft);font-size:var(--small-size)}
+/* ecosistema · montaje de mockups */
+.eco{display:flex;align-items:flex-end;justify-content:center;gap:clamp(.5rem,1.6vw,1.5rem);flex-wrap:wrap}
+.eco-item{display:flex;flex-direction:column;align-items:center}
+.eco-item .cap{margin-top:.55em;text-align:center}
+.eco-item .cap b{display:block;font-family:var(--font-display);font-style:italic;font-weight:800;text-transform:uppercase;font-size:clamp(.8rem,1.2vw,1rem)}
+.eco-item .cap span{font-size:var(--small-size);color:var(--steel)}
+.eco-ph{border:2px solid #2c2c2c;border-radius:18px;padding:5px 4px;background:#000;box-shadow:0 18px 40px -16px rgba(0,0,0,.9)}
+.eco-ph img{display:block;width:clamp(92px,11vw,124px);border-radius:11px}
+.eco-br{border:1px solid var(--line);border-radius:9px;overflow:hidden;background:var(--carbon);box-shadow:0 18px 44px -18px rgba(0,0,0,.85);width:clamp(230px,27vw,330px)}
+.eco-br .bar{display:flex;gap:5px;padding:5px 9px;background:#101010;border-bottom:1px solid var(--line)}
+.eco-br .bar i{width:7px;height:7px;border-radius:50%;display:inline-block}
+.eco-br img{display:block;width:100%;max-height:clamp(140px,22vh,230px);object-fit:cover;object-position:top}
+@media(max-width:600px){.eco{gap:.8rem}.eco-br{width:44vw}.eco-br img{max-height:17vh}.eco-ph img{width:23vw}.eco-item .cap b{font-size:.78rem}}
+/* auto en el camino + split 50/50 de pago */
+.jcar{position:absolute;left:12.5%;top:-36px;transform:translateX(-50%) scaleX(-1);font-size:38px;z-index:3;line-height:1;filter:drop-shadow(0 5px 9px rgba(0,0,0,.65))}
+.pay5050{display:grid;grid-template-columns:1fr 1fr;gap:5px;margin-top:.7em}
+.pay5050 .h{background:rgba(230,57,70,.1);border:1px solid rgba(230,57,70,.3);border-radius:7px;padding:.45em .3em;text-align:center}
+.pay5050 .h b{display:block;font-family:var(--font-mono);font-size:.82rem;color:var(--red-soft);line-height:1.15}
+.pay5050 .h span{font-size:.6rem;color:var(--steel);text-transform:uppercase;letter-spacing:.06em}
+@media(max-width:600px){.jcar{font-size:22px}}
+.road{display:grid;grid-template-columns:repeat(4,1fr);gap:.5em;align-items:stretch}
+/* the road · journey */
+.journey{position:relative;display:grid;grid-template-columns:repeat(4,1fr);text-align:center}
+.journey .road{position:absolute;left:6%;right:6%;top:18px;height:14px;border-radius:8px;background:linear-gradient(180deg,#242424,#141414);border:1px solid #2c2c2c;overflow:hidden}
+.journey .road::after{content:"";position:absolute;top:50%;left:0;right:0;height:2px;transform:translateY(-50%);background:repeating-linear-gradient(90deg,var(--red) 0 16px,transparent 16px 40px);opacity:.7}
+.jstop{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;padding:0 .4em}
+.jpin{width:50px;height:50px;border-radius:50%;background:var(--red);border:3px solid #0a0a0a;box-shadow:0 0 0 5px rgba(230,57,70,.18);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-style:italic;font-weight:900;font-size:1.4rem;color:#fff}
+.jpin.flag{background:#0a0a0a;border-color:var(--red);font-size:1.5rem}
+.jstop .pay{color:var(--red-soft);font-weight:700;font-size:var(--small-size);margin-top:.7em;letter-spacing:.04em}
+.jstop h4{font-family:var(--font-display);font-style:italic;font-weight:800;text-transform:uppercase;font-size:clamp(.95rem,1.5vw,1.2rem);margin-top:.1em}
+.jstop p{color:var(--silver);font-size:var(--small-size);line-height:1.4;margin-top:.25em;max-width:24ch}
+@media (max-width:600px){.journey{grid-template-columns:1fr 1fr;gap:1.1rem}.journey .road{display:none}}
+/* hero cover · device cluster (admin + user) */
+.hero{display:grid;grid-template-columns:1fr;gap:clamp(1rem,3vh,2rem);align-items:center;width:100%}
+@media(min-width:900px){.hero{grid-template-columns:1.02fr 1.18fr}}
+.hero-devices{position:relative;width:100%;max-width:600px;margin:0 auto}
+.hero-browser{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--carbon);box-shadow:0 30px 70px -26px rgba(0,0,0,.92)}
+.hero-browser .browser-bar{display:flex;align-items:center;gap:6px;padding:8px 12px;background:#101010;border-bottom:1px solid var(--line)}
+.hero-browser .browser-bar i{width:10px;height:10px;border-radius:50%;display:inline-block}
+.hero-browser .browser-bar .u{margin-left:14px;font-family:var(--font-mono);font-size:.66rem;color:var(--steel);overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.hero-browser img{display:block;width:100%;max-height:52vh;object-fit:cover;object-position:top}
+.hero-phone{position:absolute;right:-1%;bottom:-9%;width:21%;min-width:92px;border:2px solid #2c2c2c;border-radius:16px;padding:5px 4px;background:#000;box-shadow:0 22px 46px -16px rgba(0,0,0,.95)}
+.hero-phone img{display:block;width:100%;border-radius:11px}
+/* mobile fit · the deck is opened on the phone via WhatsApp */
+@media (max-width:860px){.phone{max-height:54vh}.phone img{max-height:50vh}}
+@media (max-width:600px){.road{grid-template-columns:1fr 1fr}.hero-browser img{max-height:34vh}.hero-phone{width:26%;right:0;bottom:-6%}}
+.edit-hotzone{position:fixed;top:0;left:0;width:70px;height:70px;z-index:10000;cursor:pointer}
+.edit-toggle{position:fixed;top:14px;left:14px;z-index:10001;opacity:0;pointer-events:none;transition:opacity .3s;background:var(--carbon);border:1px solid var(--line);color:var(--red);border-radius:8px;width:38px;height:38px;font-size:16px;cursor:pointer}
+.edit-toggle.show,.edit-toggle.active{opacity:1;pointer-events:auto}
+.edit-banner{position:fixed;top:14px;left:60px;z-index:10001;background:var(--red);color:#fff;font-weight:700;font-size:.7rem;padding:.4em .8em;border-radius:8px;opacity:0;pointer-events:none;transition:opacity .3s}
+.edit-banner.active{opacity:1}
+body.edit-active [contenteditable]{outline:1px dashed rgba(230,57,70,.5);outline-offset:3px;border-radius:3px}
+</style>
+</head>
+<body>
+<div class="progress-bar"></div>
+<nav class="nav-dots"></nav>
+<div class="slide-no"></div>
+<div class="hint">← → to navigate</div>
+<div class="edit-hotzone"></div>
+<button class="edit-toggle" id="editToggle" title="Edit mode (E)">✏</button>
+<div class="edit-banner" id="editBanner">EDIT MODE · click text · ⌘S to save</div>
+
+<!-- 1 · COVER -->
+<section class="slide" data-label="Portada">
+  <div class="decorative" style="position:absolute;inset:0;background:radial-gradient(55% 60% at 82% 35%,rgba(230,57,70,.18),transparent 60%)"></div>
+  <div class="slide-content" style="position:relative">
+    <div class="wrap hero">
+      <div>
+        <div class="eyebrow reveal">Development proposal · MVP</div>
+        <h1 class="display reveal" style="font-size:clamp(2.1rem,7.5vw,5.4rem);color:#fff;margin-top:.1em">XNOD <span class="amp">×</span> FanRace</h1>
+        <div class="kicker-line reveal" style="margin:.7em 0 0"></div>
+        <p class="reveal lead" style="margin-top:.8em;font-size:clamp(.9rem,1.7vw,1.25rem);color:#e4e4e4">We build the full MVP turnkey. <span class="amp">Live in 11 weeks.</span></p>
+        <p class="reveal" style="margin-top:.4em;font-size:var(--body-size);color:var(--silver)">You go to market. We build and run the product.</p>
+        <div class="reveal" style="margin-top:clamp(.7rem,2vh,1.3rem);display:flex;gap:.5em;flex-wrap:wrap">
+          <span class="chip red">Board</span><span class="chip red">Organize</span><span class="chip red">Marshal PWA</span><span class="chip red">Race Control</span>
+        </div>
+        <p class="reveal tag" style="margin-top:clamp(.7rem,2vh,1.3rem)">Prepared by XNOD LLC for Martin Huffmann and Alessandro Bonfatti</p>
+      </div>
+      <div class="hero-devices reveal">
+        <div class="hero-browser"><div class="browser-bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i><span class="u">fanrace.app · /race-control · admin</span></div><img src="img/racecontrol.png" alt="FanRace Race Control · admin"/></div>
+        <div class="hero-phone"><img src="img/board.png" alt="FanRace Board · user"/></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 · PROBLEM -->
+<section class="slide" data-label="Problema">
+  <div class="slide-content"><div class="wrap">
+    <div class="eyebrow reveal">The market gap</div>
+    <h2 class="display reveal" style="font-size:var(--h2-size);margin-top:.25em">Four groups.<br>Zero connection <span class="amp">between them.</span></h2>
+    <p class="lead reveal" style="margin-top:.5em">Amateur motorsport runs fragmented and blind: every actor on its own tool, with no memory between events.</p>
+    <div class="cards c4 reveal" style="margin-top:clamp(.7rem,2.2vh,1.4rem)">
+      <div class="fcard"><div class="lbl">Organizers</div><h4 style="margin-top:.15em">Sportity · Excel</h4><p>The whole operation by hand, with no single source of truth for the event.</p></div>
+      <div class="fcard"><div class="lbl">Competitors</div><h4 style="margin-top:.15em">Forms · paper</h4><p>The same data re entered at every event, with errors each time.</p></div>
+      <div class="fcard"><div class="lbl">Staff</div><h4 style="margin-top:.15em">WhatsApp · radio</h4><p>Scattered comms, no traceability or real time position.</p></div>
+      <div class="fcard"><div class="lbl">Fans</div><h4 style="margin-top:.15em">Facebook · scrapers</h4><p>They live outside the platform. No identity or data returns.</p></div>
+    </div>
+    <p class="reveal tag" style="margin-top:1.1em;font-style:italic;color:var(--silver)">Nobody shares identity, data or economy.</p>
+  </div></div>
+</section>
+
+<!-- 4 · STAKES -->
+<section class="slide" data-label="En juego">
+  <div class="slide-content"><div class="wrap">
+    <div class="eyebrow reveal">The stakes</div>
+    <h2 class="display reveal" style="font-size:var(--h2-size);margin-top:.25em">Lives are on the line.<br>In every line of <span class="amp">code.</span></h2>
+    <p class="lead reveal" style="margin-top:.7em">At the Rally de Córdoba a spectator died, standing on the wrong side of a curve. Between one checkpoint and the next, the organization has no way to know where people are. It is a blind hour, every stage.</p>
+    <div class="band reveal" style="margin-top:1.1em">
+      <div><div class="eyebrow" style="color:var(--red-soft)">The product's goal</div><div style="font-size:var(--body-size);color:#ededed;margin-top:.2em">Race direction sees the position of marshals and fans, and can act before something happens.</div></div>
+      <div class="display" style="font-size:clamp(1.4rem,3.2vw,2.4rem);color:var(--red);white-space:nowrap">Protects lives.</div>
+    </div>
+    <p class="reveal tag" style="margin-top:.9em;font-style:italic">That is why we treat it as critical software, not just another form.</p>
+  </div></div>
+</section>
+
+<!-- 6 · ECOSYSTEM -->
+<section class="slide" data-label="Ecosistema">
+  <div class="slide-content"><div class="wrap">
+    <div class="eyebrow reveal">The ecosystem</div>
+    <h2 class="display reveal" style="font-size:var(--h2-size);margin-top:.2em">One ecosystem, <span class="amp">not four loose apps.</span></h2>
+    <p class="lead reveal" style="margin-top:.5em;max-width:78ch">Board, Organize, Marshal and Race Control live on one identity and one base. What happens on track shows up in race direction and reaches the fan, in the same second.</p>
+    <div class="eco reveal" style="margin-top:clamp(1rem,3vh,2rem)">
+      <div class="eco-item"><div class="eco-ph"><img src="img/board.png" alt="Board"/></div><div class="cap"><b>Board</b><span>fans and competitors</span></div></div>
+      <div class="eco-item"><div class="eco-br"><div class="bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i></div><img src="img/organize.png" alt="Organize"/></div><div class="cap"><b>Organize</b><span>the organizer</span></div></div>
+      <div class="eco-item"><div class="eco-br"><div class="bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i></div><img src="img/racecontrol.png" alt="Race Control"/></div><div class="cap"><b>Race Control</b><span>race direction</span></div></div>
+      <div class="eco-item"><div class="eco-ph"><img src="img/marshal.png" alt="Marshal"/></div><div class="cap"><b>Marshal</b><span>officials on track</span></div></div>
+    </div>
+    <div class="pillarband reveal" style="margin-top:1em">One identity · one base · everything talks</div>
+  </div></div>
+</section>
+
+<!-- 7 · IDENTITY -->
+<section class="slide" data-label="Identidad">
+  <div class="slide-content" style="align-items:center;text-align:center"><div class="wrap" style="max-width:min(92vw,1000px)">
+    <div class="eyebrow reveal">The insight</div>
+    <h2 class="display reveal" style="font-size:var(--h2-size);margin-top:.2em">The identity layer <span class="amp">IS the product.</span></h2>
+    <p class="lead reveal" style="text-align:center;margin:.7em auto 0;max-width:64ch">One account accrues roles: today a fan, tomorrow a competitor, next year a marshal. Roles are relationships, not attributes: they add up, never replace, and data is entered once.</p>
+    <div class="reveal" style="margin-top:clamp(.9rem,2.5vh,1.5rem);display:flex;gap:.45em;flex-wrap:wrap;justify-content:center">
+      <span class="chip red">Direction</span><span class="chip red">Safety and medical</span><span class="chip red">Marshaling</span><span class="chip red">Technical</span><span class="chip red">Communications</span><span class="chip red">VIP</span><span class="chip">Competitor</span><span class="chip">Fan</span>
+    </div>
+    <p class="reveal tag" style="margin-top:1em;font-style:italic">Sportity has no memory. We do.</p>
+  </div></div>
+</section>
+
+<!-- 7b · NO LIMITS -->
+<section class="slide" data-label="Sin limites">
+  <div class="slide-content" style="align-items:center;text-align:center"><div class="wrap">
+    <div class="eyebrow reveal">The ambition</div>
+    <h2 class="display reveal" style="font-size:var(--h2-size);margin-top:.2em">An app to capture<br><span class="amp">every competition.</span></h2>
+    <p class="lead reveal" style="text-align:center;margin:.7em auto 0;max-width:62ch">A team runs several dates a year. The market is hundreds of small races that nobody integrates today. FanRace is built to capture them all, one after another.</p>
+    <div class="cards c3 reveal" style="margin-top:clamp(1rem,3vh,1.8rem);text-align:left">
+      <div class="fcard"><h4>No event limit</h4><p>Every rally, every date, every season. The platform sets no ceiling.</p></div>
+      <div class="fcard"><h4>No team limit</h4><p>Adding teams is in the architecture from day one, with no rewrite.</p></div>
+      <div class="fcard"><h4>No competitor limit</h4><p>One identity reused event after event, with nothing to reload.</p></div>
+    </div>
+    <p class="reveal tag" style="margin-top:.9em">The more competitions come in, the stronger the network gets.</p>
+  </div></div>
+</section>
+
+<!-- 8 · BOARD (mobile) -->
+<section class="slide" data-label="Board">
+  <div class="slide-content"><div class="wrap split media-left">
+    <div class="reveal" style="display:flex;justify-content:center"><div class="phone"><img src="img/board.png" alt="FanRace Board"/></div></div>
+    <div>
+      <div class="eyebrow reveal">Board · for fans and competitors · mobile</div>
+      <h2 class="display reveal" style="font-size:var(--h2-size);margin-top:.25em">The event,<br>in your <span class="amp">pocket.</span></h2>
+      <p class="lead reveal" style="margin-top:.6em">The event's public page, mobile first.</p>
+      <ul class="checks reveal" style="margin-top:.8em">
+        <li>Channels with bulletins and audited read receipts.</li>
+        <li>Follow a crew with alerts when it starts and finishes.</li>
+        <li>Results and a safety map with the position of fans.</li>
+      </ul>
+    </div>
+  </div></div>
+</section>
+
+<!-- 9 · ORGANIZE (desktop) -->
+<section class="slide" data-label="Organize">
+  <div class="slide-content"><div class="wrap split">
+    <div>
+      <div class="eyebrow reveal">Organize · for the organizer · desktop</div>
+      <h2 class="display reveal" style="font-size:var(--h2-size);margin-top:.25em">The panel that<br>runs it <span class="amp">all.</span></h2>
+      <p class="lead reveal" style="margin-top:.6em">Build the event once, reuse it forever.</p>
+      <ul class="checks reveal" style="margin-top:.8em">
+        <li>Stage builder on the map.</li>
+        <li>Import competitors by CSV with identity and medical passport verified.</li>
+        <li>Add teams from day one, without rewriting anything.</li>
+      </ul>
+    </div>
+    <div class="reveal"><div class="browser"><div class="browser-bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i><span class="u">fanrace.app · /organize</span></div><img src="img/organize.png" alt="FanRace Organize"/></div></div>
+  </div></div>
+</section>
+
+<!-- 10 · MARSHAL (mobile) -->
+<section class="slide" data-label="Marshal">
+  <div class="slide-content"><div class="wrap split media-left">
+    <div class="reveal" style="display:flex;justify-content:center"><div class="phone"><img src="img/marshal.png" alt="Marshal PWA"/></div></div>
+    <div>
+      <div class="eyebrow reveal">Marshal PWA · for officials on track · mobile</div>
+      <h2 class="display reveal" style="font-size:var(--h2-size);margin-top:.25em">Works<br><span class="amp">with no signal.</span></h2>
+      <p class="lead reveal" style="margin-top:.6em">Offline app, for one hand, in the middle of the stage.</p>
+      <ul class="checks reveal" style="margin-top:.8em">
+        <li>Pass logging and reports, even with no connection.</li>
+        <li>Every pass is sealed: no edits, audit grade.</li>
+        <li>Syncs when signal returns: every pass persisted and reordered by timestamp and sequence, with deterministic conflict resolution.</li>
+      </ul>
+    </div>
+  </div></div>
+</section>
+
+<!-- 11 · RACE CONTROL (desktop) -->
+<section class="slide" data-label="Race Control">
+  <div class="slide-content"><div class="wrap split wide-media">
+    <div>
+      <div class="eyebrow reveal">Race Control · for race direction · desktop</div>
+      <h2 class="display reveal" style="font-size:var(--h2-size);margin-top:.25em">The surface that sees<br><span class="amp">it all in time.</span></h2>
+      <p class="lead reveal" style="margin-top:.6em">The real time board that was missing in Córdoba.</p>
+      <ul class="checks reveal" style="margin-top:.8em">
+        <li>Position of marshals and incidents live, in under 5 seconds with signal; with no signal, last known position that syncs on reconnect.</li>
+        <li>Targeted Red Flag: a directed alert to the exact sector, with press and hold to confirm.</li>
+        <li>Full audit trail and signed PDF for safety and regulation.</li>
+      </ul>
+      <p class="reveal tag" style="margin-top:.9em">We work fan positioning for safety, never car tracking: we respect the boundary with Spectra.</p>
+    </div>
+    <div class="reveal"><div class="browser"><div class="browser-bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i><span class="u">fanrace.app · /race-control</span></div><img src="img/racecontrol.png" alt="FanRace Race Control"/></div></div>
+  </div></div>
+</section>
+
+<!-- 14 · WHY XNOD -->
+<section class="slide" data-label="Por que XNOD">
+  <div class="slide-content"><div class="wrap">
+    <div class="eyebrow reveal">Why XNOD</div>
+    <h2 class="display reveal" style="font-size:var(--h2-size);margin-top:.2em">A team,<br>not a <span class="amp">single engineer.</span></h2>
+    <p class="lead reveal" style="margin-top:.6em">Your search started with a founding engineer. An MVP of this scope, with offline and real time, holds up better with a team than with a single person.</p>
+    <div class="cards c3 reveal" style="margin-top:clamp(.8rem,2.5vh,1.4rem)">
+      <div class="fcard"><div class="lbl">The assigned team</div><h4 style="margin-top:.2em">Product manager + 2 devs</h4><p>With Alan in the day to day of product. A parallel team, not one person in series.</p></div>
+      <div class="fcard"><div class="lbl">We put ourselves to the test</div><h4 style="margin-top:.2em">We did your technical challenge</h4><p>We went through your code evaluation with Alessandro. Rally, offline PWA and real time references on request.</p></div>
+      <div class="fcard"><div class="lbl">More than code</div><h4 style="margin-top:.2em">Product and business judgment</h4><p>We bring ideas, contacts and a commercial eye. No lock in, no single point of failure.</p></div>
+    </div>
+    <p class="reveal tag" style="margin-top:.9em">We answer your four asks: price per milestone, team and CVs, references and start date.</p>
+  </div></div>
+</section>
+
+<!-- 15 · PLAN -->
+<section class="slide" data-label="Plan">
+  <div class="slide-content"><div class="wrap">
+    <div class="eyebrow reveal">Execution plan</div>
+    <h2 class="display reveal" style="font-size:var(--h2-size);margin-top:.2em">Three stages, 11 weeks.<br>Mapped to your <span class="amp">milestones.</span></h2>
+    <div class="stagebar reveal" style="margin-top:clamp(.6rem,2vh,1.1rem)"><div class="stageseg">Stage 1 <span class="w">4 wk</span></div><div class="stageseg">Stage 2 <span class="w">4 wk</span></div><div class="stageseg">Stage 3 <span class="w">3 wk</span></div></div>
+    <div class="cards c3 reveal" style="margin-top:clamp(.6rem,2vh,1rem)">
+      <div class="fcard"><div class="lbl">Stage 1 · your M0 and M1</div><h4 style="margin-top:.15em">Auth + Board + Admin</h4><p>Identity with RBAC, the surfaces navigable, validated with organizers.</p><p class="tag" style="margin-top:.45em;color:var(--red-soft)">Acceptance: flow approved.</p></div>
+      <div class="fcard"><div class="lbl">Stage 2 · your M2 and M3</div><h4 style="margin-top:.15em">Field PWA + Race Control</h4><p>Marshal offline with sync and Race Control in real time, end to end.</p><p class="tag" style="margin-top:.45em;color:var(--red-soft)">Acceptance: system operational.</p></div>
+      <div class="fcard"><div class="lbl">Stage 3 · your M4</div><h4 style="margin-top:.15em">Results + QA + pilot</h4><p>Red Flag, results, 500 concurrent connection load test (marshals and fans live), security review and support at the first rally.</p><p class="tag" style="margin-top:.45em;color:var(--red-soft)">Acceptance: rally run.</p></div>
+    </div>
+    <p class="reveal tag" style="margin-top:.8em">We don't start from zero: we build on your spec, your identity and your front. Alessandro works inside the team, with a demo to the CTO every two weeks. We tackle the offline first, the most critical piece, inside the 11 weeks. If something gets complicated, we adjust the stage scope, never the quality.</p>
+  </div></div>
+</section>
+
+<!-- OFFLINE SYNC (after Plan) -->
+<section class="slide" data-label="Offline">
+  <div class="slide-content" style="align-items:center;text-align:center"><div class="wrap">
+    <div class="eyebrow reveal">The heart of the MVP</div>
+    <h2 class="display reveal" style="font-size:var(--h2-size);margin-top:.2em">Offline <span class="amp">sync.</span></h2>
+    <p class="lead reveal" style="text-align:center;margin:.7em auto 0;max-width:58ch">The marshal logs in the middle of the stage, with no signal, and not a single record can be lost. It is the most critical piece of the whole MVP: it is where these projects die.</p>
+    <div class="reveal" style="margin-top:clamp(1rem,4vh,2.2rem)"><span class="bigprice" style="font-size:clamp(3rem,13vw,7.5rem);color:var(--red)">10 days</span></div>
+    <p class="reveal lead" style="text-align:center;margin:.7em auto 0;max-width:52ch">We dedicate ten focused days, only to this, to get it right. Inside the 11 weeks, adding no time.</p>
+  </div></div>
+</section>
+
+<!-- ROAD (before Investment) -->
+<section class="slide" data-label="Camino">
+  <div class="slide-content"><div class="wrap">
+    <div class="eyebrow reveal">The road</div>
+    <h2 class="display reveal" style="font-size:var(--h2-size);margin-top:.2em">From signature <span class="amp">to the real event.</span></h2>
+    <p class="lead reveal" style="margin-top:.5em">One road, marked by stage and by payment. Each leg ends in something you can already use.</p>
+    <div class="journey reveal" style="margin-top:clamp(1.8rem,7vh,3.4rem)">
+      <div class="road"></div>
+      <div class="jcar">🏎️</div>
+      <div class="jstop"><div class="jpin">1</div><div class="pay">1st payment</div><h4>Start</h4><p>We design and build the whole front end: the 4 surfaces navigable, validated with organizers. Week 4.</p></div>
+      <div class="jstop"><div class="jpin">2</div><div class="pay">2nd payment</div><h4>Functional</h4><p>Backend and sync: the 4 surfaces end to end, with the marshals offline. Week 8.</p></div>
+      <div class="jstop"><div class="jpin">3</div><div class="pay">3rd payment</div><h4>Pilot</h4><p>Targeted Red Flag, QA, hardening and load test. The product ready to run. Week 11.</p></div>
+      <div class="jstop"><div class="jpin flag">🏁</div><div class="pay">Finish</div><h4>Real event</h4><p>A pilot rally run and documented. Ready to scale to more competitions.</p></div>
+    </div>
+  </div></div>
+</section>
+
+<!-- 17 · INVESTMENT -->
+<section class="slide" data-label="Inversion">
+  <div class="slide-content"><div class="wrap">
+    <div class="eyebrow reveal">Investment and payment terms</div>
+    <h2 class="display reveal" style="font-size:var(--h2-size);margin-top:.2em">The investment, <span class="amp">no surprises.</span></h2>
+    <p class="lead reveal" style="margin-top:.5em">USD 47,000 total, fixed price per milestone. 50% at the start and 50% on delivery of each stage. The code is yours progressively, with IP transferred on each payment, no lock in.</p>
+    <div class="cards c3 reveal" style="margin-top:clamp(.6rem,1.8vh,1rem)">
+      <div class="fcard"><div class="lbl">Stage 1 · week 4</div><div class="bigprice" style="font-size:clamp(1.5rem,3.6vw,2.2rem);margin-top:.1em">USD 20,000</div><p>Auth + Board + Admin</p><div class="pay5050"><div class="h"><b>USD 10,000</b><span>at start</span></div><div class="h"><b>USD 10,000</b><span>on delivery</span></div></div></div>
+      <div class="fcard"><div class="lbl">Stage 2 · week 8</div><div class="bigprice" style="font-size:clamp(1.5rem,3.6vw,2.2rem);margin-top:.1em">USD 20,000</div><p>Field PWA + Race Control</p><div class="pay5050"><div class="h"><b>USD 10,000</b><span>at start</span></div><div class="h"><b>USD 10,000</b><span>on delivery</span></div></div></div>
+      <div class="fcard"><div class="lbl">Stage 3 · week 11</div><div class="bigprice" style="font-size:clamp(1.5rem,3.6vw,2.2rem);margin-top:.1em">USD 7,000</div><p>Results + QA + pilot</p><div class="pay5050"><div class="h"><b>USD 3,500</b><span>at start</span></div><div class="h"><b>USD 3,500</b><span>on delivery</span></div></div></div>
+    </div>
+    <div class="pillarband reveal" style="margin-top:1em">To start, just the first payment: USD 10,000 · 50% of Stage 1</div>
+  </div></div>
+</section>
+
+<!-- 19 · CLOSE -->
+<section class="slide" data-label="Cierre">
+  <div class="decorative" style="position:absolute;inset:0;background:radial-gradient(62% 62% at 50% 52%,rgba(230,57,70,.18),transparent 62%)"></div>
+  <div class="slide-content" style="align-items:center;text-align:center;position:relative">
+    <div class="eyebrow reveal">Ready to build</div>
+    <h2 class="display reveal" style="font-size:clamp(2rem,5.6vw,4.6rem);margin-top:.2em;max-width:20ch">We are ready to build <span class="amp">FanRace.</span></h2>
+    <p class="reveal lead" style="text-align:center;max-width:46ch;margin-top:.55em;font-size:clamp(1rem,2.1vw,1.55rem);color:#e4e4e4">And to build, together, <span class="amp">the motorsport ecosystem.</span></p>
+    <div class="kicker-line reveal" style="margin:.9em auto 0"></div>
+    <p class="reveal" style="margin-top:clamp(.9rem,2.6vh,1.6rem);font-family:var(--font-mono);font-size:var(--small-size);color:var(--silver);max-width:82ch">Alan Naim Tapia · Co-founder · XNOD LLC · WhatsApp +54 9 11 5459 6266 · administracion@xnod.tech · xnod.tech</p>
+    <p class="reveal tag" style="margin-top:.7em;font-style:italic">We build startups alongside founders.</p>
+  </div>
+</section>
+
+<script>
+class Deck{
+  constructor(){this.slides=[...document.querySelectorAll('.slide')];this.dotsEl=document.querySelector('.nav-dots');this.bar=document.querySelector('.progress-bar');this.noEl=document.querySelector('.slide-no');this.current=0;this.observer();this.dots();this.keys();this.touch();this.update();window.addEventListener('scroll',()=>this.onScroll(),{passive:true});}
+  observer(){const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');this.current=this.slides.indexOf(e.target);this.update();if(e.target.dataset.label==='Camino')playEngine();}})},{threshold:.55});this.slides.forEach(s=>io.observe(s));}
+  dots(){this.dotsEl.innerHTML='';this.slides.forEach((s,i)=>{const b=document.createElement('button');b.setAttribute('aria-label',s.dataset.label||('Slide '+(i+1)));b.title=s.dataset.label||'';b.onclick=()=>this.go(i);this.dotsEl.appendChild(b);});}
+  go(i){i=Math.max(0,Math.min(this.slides.length-1,i));this.slides[i].scrollIntoView({behavior:'smooth'});}
+  update(){[...this.dotsEl.children].forEach((d,i)=>d.classList.toggle('active',i===this.current));this.bar.style.width=((this.current)/(this.slides.length-1)*100)+'%';this.noEl.textContent=String(this.current+1).padStart(2,'0')+' / '+String(this.slides.length).padStart(2,'0');}
+  onScroll(){const idx=Math.round(window.scrollY/window.innerHeight);if(idx!==this.current){this.current=idx;this.update();}}
+  keys(){window.addEventListener('keydown',e=>{if(e.target.getAttribute&&e.target.getAttribute('contenteditable'))return;if(['ArrowDown','ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();this.go(this.current+1);}else if(['ArrowUp','ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();this.go(this.current-1);}else if(e.key==='Home'){this.go(0);}else if(e.key==='End'){this.go(this.slides.length-1);}});}
+  touch(){let y=null;window.addEventListener('touchstart',e=>y=e.touches[0].clientY,{passive:true});window.addEventListener('touchend',e=>{if(y===null)return;const dy=y-e.changedTouches[0].clientY;if(Math.abs(dy)>55)this.go(this.current+(dy>0?1:-1));y=null;},{passive:true});}
+}
+const deck=new Deck();
+/* engine sound when reaching "The road" (synthesized Web Audio; needs a prior click/key due to autoplay policy) */
+let _ac=null,_lastEng=0;
+function _ensureAC(){try{if(!_ac)_ac=new(window.AudioContext||window.webkitAudioContext)();if(_ac&&_ac.state==='suspended')_ac.resume();}catch(e){}}
+['keydown','pointerdown','touchstart'].forEach(ev=>window.addEventListener(ev,_ensureAC,{passive:true}));
+function playEngine(){
+  if(!_ac||_ac.state!=='running')return;
+  const np=(window.performance&&performance.now)?performance.now():0;if(np-_lastEng<6000)return;_lastEng=np;
+  const ac=_ac,t=ac.currentTime,END=t+5;
+  const out=ac.createGain();out.gain.value=0.85;out.connect(ac.destination);
+  /* motor de arranque · 3 vueltas */
+  const ck=ac.createOscillator();ck.type='sawtooth';ck.frequency.value=36;
+  const ckf=ac.createBiquadFilter();ckf.type='lowpass';ckf.frequency.value=240;
+  const ckg=ac.createGain();ckg.gain.value=0.0001;ck.connect(ckf);ckf.connect(ckg);ckg.connect(out);
+  for(let i=0;i<3;i++){const c=t+i*0.34;ckg.gain.setValueAtTime(0.0001,c);ckg.gain.linearRampToValueAtTime(0.5,c+0.06);ckg.gain.exponentialRampToValueAtTime(0.02,c+0.3);}
+  ck.start(t);ck.stop(t+1.15);
+  /* enciende, revoluciona y se asienta */
+  const F=t+1.05;
+  const e1=ac.createOscillator();e1.type='sawtooth';const e2=ac.createOscillator();e2.type='square';
+  const ef=ac.createBiquadFilter();ef.type='lowpass';ef.Q.value=7;const eg=ac.createGain();eg.gain.value=0.0001;
+  e1.connect(ef);e2.connect(ef);ef.connect(eg);eg.connect(out);
+  const rev=(o,a,b,c,d,e,g2)=>{o.frequency.setValueAtTime(a,F);o.frequency.exponentialRampToValueAtTime(b,F+0.55);o.frequency.exponentialRampToValueAtTime(c,F+1.2);o.frequency.exponentialRampToValueAtTime(d,F+1.9);o.frequency.exponentialRampToValueAtTime(e,F+2.9);o.frequency.exponentialRampToValueAtTime(g2,END);};
+  rev(e1,80,300,150,340,120,100);rev(e2,160,600,300,680,240,200);
+  ef.frequency.setValueAtTime(400,F);ef.frequency.exponentialRampToValueAtTime(3000,F+0.55);ef.frequency.exponentialRampToValueAtTime(1300,F+1.2);ef.frequency.exponentialRampToValueAtTime(3200,F+1.9);ef.frequency.exponentialRampToValueAtTime(1000,F+2.9);ef.frequency.exponentialRampToValueAtTime(750,END);
+  eg.gain.setValueAtTime(0.0001,F);eg.gain.exponentialRampToValueAtTime(0.24,F+0.08);eg.gain.linearRampToValueAtTime(0.18,F+1.2);eg.gain.linearRampToValueAtTime(0.2,F+1.9);eg.gain.linearRampToValueAtTime(0.14,F+3.3);eg.gain.exponentialRampToValueAtTime(0.0001,END);
+  e1.start(F);e2.start(F);e1.stop(END+0.05);e2.stop(END+0.05);
+  /* grit · ruido filtrado */
+  const len=Math.floor(ac.sampleRate*4),nb=ac.createBuffer(1,len,ac.sampleRate),nd=nb.getChannelData(0);
+  for(let i=0;i<len;i++)nd[i]=Math.random()*2-1;
+  const ns=ac.createBufferSource();ns.buffer=nb;const nf=ac.createBiquadFilter();nf.type='bandpass';nf.Q.value=0.7;const ng=ac.createGain();ng.gain.value=0.0001;
+  ns.connect(nf);nf.connect(ng);ng.connect(out);
+  nf.frequency.setValueAtTime(900,F);nf.frequency.exponentialRampToValueAtTime(2600,F+0.55);nf.frequency.exponentialRampToValueAtTime(1100,END);
+  ng.gain.setValueAtTime(0.0001,F);ng.gain.exponentialRampToValueAtTime(0.06,F+0.12);ng.gain.linearRampToValueAtTime(0.03,F+2.6);ng.gain.exponentialRampToValueAtTime(0.0001,END);
+  ns.start(F);ns.stop(END+0.05);
+}
+const editor={isActive:false,
+  toggle(){this.isActive=!this.isActive;document.body.classList.toggle('edit-active',this.isActive);document.getElementById('editToggle').classList.toggle('active',this.isActive);document.getElementById('editBanner').classList.toggle('active',this.isActive);document.querySelectorAll('h1,h2,h3,h4,p,li,span,a,.stat,.bigprice,.eyebrow').forEach(el=>{if(el.closest('.nav-dots,.progress-bar,.edit-toggle,.edit-banner'))return;if(this.isActive)el.setAttribute('contenteditable','true');else el.removeAttribute('contenteditable');});},
+  export(){const eds=[...document.querySelectorAll('[contenteditable]')];eds.forEach(el=>el.removeAttribute('contenteditable'));document.body.classList.remove('edit-active');const t=document.getElementById('editToggle'),b=document.getElementById('editBanner');t.classList.remove('active','show');b.classList.remove('active');const html='<!DOCTYPE html>\n'+document.documentElement.outerHTML;document.body.classList.add('edit-active');eds.forEach(el=>el.setAttribute('contenteditable','true'));t.classList.add('active');b.classList.add('active');const blob=new Blob([html],{type:'text/html'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='deck-en.html';a.click();URL.revokeObjectURL(a.href);}};
+const hot=document.querySelector('.edit-hotzone'),tog=document.getElementById('editToggle');let ht=null;
+hot.addEventListener('mouseenter',()=>{clearTimeout(ht);tog.classList.add('show');});
+hot.addEventListener('mouseleave',()=>{ht=setTimeout(()=>{if(!editor.isActive)tog.classList.remove('show');},400);});
+tog.addEventListener('mouseenter',()=>clearTimeout(ht));
+tog.addEventListener('mouseleave',()=>{ht=setTimeout(()=>{if(!editor.isActive)tog.classList.remove('show');},400);});
+tog.addEventListener('click',()=>editor.toggle());hot.addEventListener('click',()=>editor.toggle());
+window.addEventListener('keydown',e=>{if((e.key==='e'||e.key==='E')&&!e.target.getAttribute('contenteditable')){editor.toggle();}if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='s'){e.preventDefault();editor.export();}});
+</script>
+</body>
+</html>
